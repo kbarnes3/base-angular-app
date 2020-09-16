@@ -26,5 +26,15 @@ steps:
   displayName: 'Run linting (ng lint)'
 
 - script: |
+    npm run-script test-headless
+  displayName: 'Run tests (ng test)'
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: '**/TESTS.xml'
+
+- script: |
     npm run-script build
   displayName: 'Compile app (npm run-script build)'

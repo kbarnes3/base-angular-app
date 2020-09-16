@@ -26,5 +26,9 @@ steps:
   displayName: 'Run linting (ng lint)'
 
 - script: |
+    npm run-script test-headless
+  displayName: 'Run tests (ng test)'
+
+- script: |
     npm run-script build
   displayName: 'Compile app (npm run-script build)'

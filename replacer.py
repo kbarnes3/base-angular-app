@@ -3,7 +3,7 @@ from os import rename, walk
 from os.path import join, splitext
 
 PLACEHOLDER_VARIABLE = 'base-angular-app'
-PLACEHOLDER_TITLE = 'BaseAngularApp'
+PLACEHOLDER_TITLE = 'Base Angular App'
 PLACEHOLDER_OWNER = 'BaseAngularAppAuthors'
 
 EXCLUDED_DIRECTORIES = ['.git', '.idea', 'node_modules']

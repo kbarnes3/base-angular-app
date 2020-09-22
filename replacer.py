@@ -62,10 +62,10 @@ def replace_in_files(site_variable, site_title, owner):
 
 
 if __name__ == "__main__":
-    print('Enter the name of the site in a form suitable for a variable. This should consist of only lowercase characters (e.g., mydjangosite)')
+    print('Enter the name of the site in a form suitable for a variable. This should consist of only lowercase characters and dashes (e.g., my-angular-app)')
     site_variable = input('Site Variable: ')
 
-    print('\nEnter the name of the site in your preferred human-readable form. This can contain mixed case, spaces, symbols, etc. (e.g., My Django Site)')
+    print('\nEnter the name of the site in your preferred human-readable form. This can contain mixed case, spaces, symbols, etc. (e.g., My Angular App)')
     site_title = input('Site Title: ')
 
     print('\nEnter the name of the owner of this site. This name will appear in the copyright information for this site')

@@ -4,7 +4,7 @@
 /dist
 /tmp
 /out-tsc
-git-version.json
+/git-version.json
 # Only exists if Bazel was run
 /bazel-out
 

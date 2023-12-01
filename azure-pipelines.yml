@@ -12,11 +12,11 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '16.x'
+    versionSpec: '20.x'
   displayName: 'Install Node.js'
 
 - script: |
-    npm install --location=global npm@9
+    npm install --location=global npm@10
     npm install --location=global @angular/cli
     npm ci
   displayName: 'Install required packages (npm install)'

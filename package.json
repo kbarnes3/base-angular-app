@@ -2,7 +2,7 @@
   "name": "base-angular-app",
   "version": "0.0.0",
   "engines": {
-      "node": ">=20.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "ng": "ng",
@@ -46,9 +46,9 @@
     "@angular/compiler-cli": "^17.0.5",
     "@types/jasmine": "^5.1.4",
     "@types/jasminewd2": "^2.0.13",
-    "@types/node": "^20.10.2",
-    "@typescript-eslint/eslint-plugin": "^6.13.1",
-    "@typescript-eslint/parser": "^6.13.1",
+    "@types/node": "^20.10.3",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
     "eslint": "^8.55.0",
     "jasmine-core": "^5.1.1",
     "jasmine-spec-reporter": "^7.0.0",

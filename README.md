@@ -2,7 +2,7 @@ BaseAngularApp
 ==============
 
 ![Azure Static Web Apps CI/CD](https://github.com/kbarnes3/base-angular-app/workflows/Azure%20Static%20Web%20Apps%20CI/CD/badge.svg)
-[![Build Status](https://kbarnes3.visualstudio.com/BaseAngularApp/_apis/build/status/kbarnes3.base-angular-app?branchName=trunk)](https://kbarnes3.visualstudio.com/BaseAngularApp/_build/latest?definitionId=10&branchName=trunk)
+[![Test 🧪 base-angular-app](https://github.com/kbarnes3/base-angular-app/actions/workflows/test.yml/badge.svg)](https://github.com/kbarnes3/base-angular-app/actions/workflows/test.yml)
 
 A basic template for an Angular app and support for deploying and testing in Azure.
 

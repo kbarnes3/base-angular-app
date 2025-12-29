@@ -1,7 +1,21 @@
 <!-- Fixed navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <span class="navbar-brand">{{ title }}</span>
+    <a class="navbar-brand" routerLink="/">{{ title }}</a>
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed" aria-controls="navbarNav" [attr.aria-expanded]="!isMenuCollapsed" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse" [ngbCollapse]="isMenuCollapsed" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="isMenuCollapsed = true">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="isMenuCollapsed = true">About</a>
+        </li>
+      </ul>
+      <app-theme-switcher></app-theme-switcher>
+    </div>
   </div>
 </nav>
 
@@ -11,7 +25,7 @@
 
 <!-- If you don't need this ribbon, you can also uninstall the github-fork-ribbon-css npm package -->
 <!-- The color for this ribbon is overridden in styles.scss -->
-<a class="github-fork-ribbon right-top d-none d-md-block" href="https://github.com/kbarnes3/base-angular-app" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<a class="github-fork-ribbon right-top d-none d-lg-block" href="https://github.com/kbarnes3/base-angular-app" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 <footer class="footer" role="contentinfo">
   <div class="container">
     <p>&copy; 2020-2025 BaseAngularAppAuthors </p>

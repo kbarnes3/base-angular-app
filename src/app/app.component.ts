@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { versionInfo } from './version-info';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 
@@ -7,7 +7,7 @@ import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.componen
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    imports: [RouterOutlet, ThemeSwitcherComponent]
+    imports: [RouterOutlet, RouterLink, RouterLinkActive, ThemeSwitcherComponent]
 })
 export class AppComponent {
   title = 'Base Angular App';

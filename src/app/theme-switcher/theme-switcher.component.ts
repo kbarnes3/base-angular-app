@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { ThemeService, Theme } from './theme.service';
@@ -12,10 +12,13 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./theme-switcher.component.scss']
 })
 export class ThemeSwitcherComponent implements OnInit, OnDestroy {
+  private themeService = inject(ThemeService);
+
   currentTheme: Theme = 'auto';
   private subscription?: Subscription;
 
-  constructor(private themeService: ThemeService) {}
+
+  constructor() {}
 
   ngOnInit(): void {
     this.subscription = this.themeService.theme$.subscribe(theme => {

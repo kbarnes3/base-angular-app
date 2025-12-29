@@ -30,27 +30,16 @@ describe('ThemeSwitcherComponent', () => {
 
   it('should return correct icon for light theme', () => {
     component.currentTheme = 'light';
-    expect(component.getThemeIcon()).toBe('☀️');
+    expect(component.getThemeIcon()).toBe('bi bi-sun-fill');
   });
 
   it('should return correct icon for dark theme', () => {
     component.currentTheme = 'dark';
-    expect(component.getThemeIcon()).toBe('🌙');
+    expect(component.getThemeIcon()).toBe('bi bi-moon-fill');
   });
 
   it('should return correct icon for auto theme', () => {
     component.currentTheme = 'auto';
-    expect(component.getThemeIcon()).toBe('💻');
-  });
-
-  it('should return correct label for each theme', () => {
-    component.currentTheme = 'light';
-    expect(component.getThemeLabel()).toBe('Light');
-
-    component.currentTheme = 'dark';
-    expect(component.getThemeLabel()).toBe('Dark');
-
-    component.currentTheme = 'auto';
-    expect(component.getThemeLabel()).toBe('Auto');
+    expect(component.getThemeIcon()).toBe('bi bi-circle-half');
   });
 });

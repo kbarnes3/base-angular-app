@@ -34,24 +34,12 @@ export class ThemeSwitcherComponent implements OnInit, OnDestroy {
   getThemeIcon(): string {
     switch (this.currentTheme) {
       case 'light':
-        return '☀️';
+        return 'bi bi-sun-fill';
       case 'dark':
-        return '🌙';
+        return 'bi bi-moon-fill';
       case 'auto':
       default:
-        return '💻';
-    }
-  }
-
-  getThemeLabel(): string {
-    switch (this.currentTheme) {
-      case 'light':
-        return 'Light';
-      case 'dark':
-        return 'Dark';
-      case 'auto':
-      default:
-        return 'Auto';
+        return 'bi bi-circle-half';
     }
   }
 }

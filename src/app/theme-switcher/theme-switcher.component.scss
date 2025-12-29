@@ -1,3 +1,7 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins/breakpoints';
+
 .theme-icon {
   display: inline-block;
   width: 1.2em;
@@ -11,4 +15,11 @@
 ::ng-deep .dropdown-item.active {
   background-color: var(--bs-primary);
   color: white;
+}
+
+// Add padding on larger screens to avoid overlap with GitHub fork ribbon
+:host {
+  @include media-breakpoint-up(lg) {
+    margin-right: 60px;
+  }
 }

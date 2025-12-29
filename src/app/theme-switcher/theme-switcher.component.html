@@ -1,0 +1,17 @@
+<div ngbDropdown class="d-inline-block">
+  <button type="button" class="btn btn-outline-light" id="themeDropdown" ngbDropdownToggle>
+    <span class="theme-icon">{{ getThemeIcon() }}</span>
+    <span class="d-none d-sm-inline ms-1">{{ getThemeLabel() }}</span>
+  </button>
+  <div ngbDropdownMenu aria-labelledby="themeDropdown">
+    <button ngbDropdownItem (click)="setTheme('light')" [class.active]="currentTheme === 'light'">
+      <span class="theme-icon">☀️</span> Light
+    </button>
+    <button ngbDropdownItem (click)="setTheme('dark')" [class.active]="currentTheme === 'dark'">
+      <span class="theme-icon">🌙</span> Dark
+    </button>
+    <button ngbDropdownItem (click)="setTheme('auto')" [class.active]="currentTheme === 'auto'">
+      <span class="theme-icon">💻</span> Auto
+    </button>
+  </div>
+</div>

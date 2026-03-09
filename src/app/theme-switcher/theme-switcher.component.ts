@@ -18,8 +18,6 @@ export class ThemeSwitcherComponent implements OnInit, OnDestroy {
   private subscription?: Subscription;
 
 
-  constructor() {}
-
   ngOnInit(): void {
     this.subscription = this.themeService.theme$.subscribe(theme => {
       this.currentTheme = theme;

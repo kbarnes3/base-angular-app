@@ -1,0 +1,56 @@
+.app-shell {
+  height: 100vh;
+}
+
+mat-toolbar {
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+
+  // Make text buttons (nav links) and icon buttons inherit on-primary
+  .mat-mdc-button,
+  .mat-mdc-icon-button {
+    --mdc-text-button-label-text-color: var(--mat-sys-on-primary);
+    --mat-icon-button-state-layer-color: var(--mat-sys-on-primary);
+    color: var(--mat-sys-on-primary);
+  }
+
+  // Active nav link
+  .mat-mdc-button.active {
+    background: color-mix(in srgb, var(--mat-sys-on-primary) 18%, transparent);
+    border-radius: 999px;
+  }
+  // Push the theme switcher away from the GitHub fork ribbon on large screens
+  app-theme-switcher {
+    @media (min-width: 992px) {
+      margin-right: 140px;
+    }
+  }
+}
+
+.app-brand {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+.main-container {
+  padding-top: 20px;
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-top: 100px;
+  color: var(--mat-sys-on-surface-variant);
+  text-align: center;
+  border-top: 1px solid var(--mat-sys-outline-variant);
+
+  @media screen and (min-width: 720px) {
+    text-align: left;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

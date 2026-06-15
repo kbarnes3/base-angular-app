@@ -33,7 +33,6 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/tailwind.css",
               "node_modules/github-fork-ribbon-css/gh-fork-ribbon.css"
             ],
             "scripts": [],
@@ -103,8 +102,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/tailwind.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

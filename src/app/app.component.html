@@ -1,5 +1,5 @@
 <mat-sidenav-container class="app-shell">
-  <mat-sidenav #sidenav mode="over" position="end" class="lg:hidden">
+  <mat-sidenav #sidenav mode="over" position="end">
     <mat-nav-list>
       <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="sidenav.close()">Home</a>
       <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="sidenav.close()">About</a>
@@ -10,32 +10,36 @@
     <mat-toolbar>
       <a routerLink="/" class="app-brand">{{ title }}</a>
 
-      <nav class="hidden lg:flex lg:items-center lg:gap-2 ml-2">
-        <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a mat-button routerLink="/about" routerLinkActive="active">About</a>
-      </nav>
+      @if (!isHandset()) {
+        <nav class="toolbar-nav">
+          <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+          <a mat-button routerLink="/about" routerLinkActive="active">About</a>
+        </nav>
+      }
 
-      <span class="flex-1"></span>
+      <span class="toolbar-spacer"></span>
 
       <app-theme-switcher></app-theme-switcher>
 
-      <span class="lg:hidden">
+      @if (isHandset()) {
         <button mat-icon-button (click)="sidenav.toggle()" aria-label="Toggle navigation">
           <mat-icon>menu</mat-icon>
         </button>
-      </span>
+      }
     </mat-toolbar>
 
-    <div class="container mx-auto px-4 pt-5 main-container">
+    <div class="main-container">
       <router-outlet></router-outlet>
     </div>
 
     <!-- If you don't need this ribbon, you can also uninstall the github-fork-ribbon-css npm package -->
     <!-- The color for this ribbon is overridden in styles.scss -->
-    <a class="github-fork-ribbon right-top hidden lg:block" href="https://github.com/kbarnes3/base-angular-app" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    @if (!isHandset()) {
+      <a class="github-fork-ribbon right-top" href="https://github.com/kbarnes3/base-angular-app" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    }
 
     <footer class="footer" role="contentinfo">
-      <div class="container mx-auto px-4">
+      <div class="footer-inner">
         <p>&copy; 2020-2026 BaseAngularAppAuthors </p>
         <p>Built from version {{ gitVersion }}</p>
       </div>

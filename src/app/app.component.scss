@@ -19,12 +19,25 @@ mat-toolbar {
     background: color-mix(in srgb, var(--mat-sys-on-primary) 18%, transparent);
     border-radius: 999px;
   }
+
   // Push the theme switcher away from the GitHub fork ribbon on large screens
+  // (matches the @if (!isHandset()) condition in the template)
   app-theme-switcher {
-    @media (min-width: 992px) {
+    @media (min-width: 1024px) {
       margin-right: 140px;
     }
   }
+}
+
+.toolbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.toolbar-spacer {
+  flex: 1;
 }
 
 .app-brand {
@@ -35,7 +48,9 @@ mat-toolbar {
 }
 
 .main-container {
-  padding-top: 20px;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px 16px 0;
 }
 
 .footer {
@@ -45,8 +60,16 @@ mat-toolbar {
   color: var(--mat-sys-on-surface-variant);
   text-align: center;
   border-top: 1px solid var(--mat-sys-outline-variant);
+}
 
-  @media screen and (min-width: 720px) {
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media screen and (min-width: 720px) {
+  .footer {
     text-align: left;
 
     p {

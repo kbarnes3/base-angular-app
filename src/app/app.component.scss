@@ -1,0 +1,81 @@
+.app-shell {
+  height: 100vh;
+}
+
+mat-toolbar {
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+
+  // Make text buttons (nav links) and icon buttons inherit on-primary
+  .mat-mdc-button,
+  .mat-mdc-icon-button {
+    --mdc-text-button-label-text-color: var(--mat-sys-on-primary);
+    --mat-icon-button-state-layer-color: var(--mat-sys-on-primary);
+    color: var(--mat-sys-on-primary);
+  }
+
+  // Active nav link
+  .mat-mdc-button.route-active {
+    background: color-mix(in srgb, var(--mat-sys-on-primary) 18%, transparent);
+    border-radius: 999px;
+  }
+
+  // Push the theme switcher away from the GitHub fork ribbon on large screens
+  // (matches the @if (!isHandset()) condition in the template)
+  app-theme-switcher {
+    @media (min-width: 1024px) {
+      margin-right: 140px;
+    }
+  }
+}
+
+.toolbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.app-brand {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+.main-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px 16px 0;
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-top: 100px;
+  color: var(--mat-sys-on-surface-variant);
+  text-align: center;
+  border-top: 1px solid var(--mat-sys-outline-variant);
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media screen and (min-width: 720px) {
+  .footer {
+    text-align: left;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

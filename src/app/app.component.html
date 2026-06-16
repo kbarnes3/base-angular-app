@@ -1,34 +1,48 @@
-<!-- Fixed navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <a class="navbar-brand" routerLink="/">{{ title }}</a>
-    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed" aria-controls="navbarNav" [attr.aria-expanded]="!isMenuCollapsed" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse" [ngbCollapse]="isMenuCollapsed" id="navbarNav">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="isMenuCollapsed = true">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="isMenuCollapsed = true">About</a>
-        </li>
-      </ul>
+<mat-sidenav-container class="app-shell">
+  <mat-sidenav #sidenav mode="over" position="end" autoFocus="dialog">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" [activated]="activeUrl() === '/'" (click)="sidenav.close()">Home</a>
+      <a mat-list-item routerLink="/about" [activated]="activeUrl() === '/about'" (click)="sidenav.close()">About</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <a routerLink="/" class="app-brand">{{ title }}</a>
+
+      @if (!isHandset()) {
+        <nav class="toolbar-nav">
+          <a mat-button routerLink="/" routerLinkActive="route-active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+          <a mat-button routerLink="/about" routerLinkActive="route-active">About</a>
+        </nav>
+      }
+
+      <span class="toolbar-spacer"></span>
+
       <app-theme-switcher></app-theme-switcher>
+
+      @if (isHandset()) {
+        <button mat-icon-button (click)="sidenav.toggle()" aria-label="Toggle navigation">
+          <mat-icon>menu</mat-icon>
+        </button>
+      }
+    </mat-toolbar>
+
+    <div class="main-container">
+      <router-outlet></router-outlet>
     </div>
-  </div>
-</nav>
 
-<div class="container main-container">
-  <router-outlet></router-outlet>
-</div> <!-- /container -->
+    <!-- If you don't need this ribbon, you can also uninstall the github-fork-ribbon-css npm package -->
+    <!-- The color for this ribbon is overridden in styles.scss -->
+    @if (!isHandset()) {
+      <a class="github-fork-ribbon right-top" href="https://github.com/kbarnes3/base-angular-app" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    }
 
-<!-- If you don't need this ribbon, you can also uninstall the github-fork-ribbon-css npm package -->
-<!-- The color for this ribbon is overridden in styles.scss -->
-<a class="github-fork-ribbon right-top d-none d-lg-block" href="https://github.com/kbarnes3/base-angular-app" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <p>&copy; 2020-2026 BaseAngularAppAuthors </p>
-    <p>Built from version {{ gitVersion }}</p>
-  </div>
-</footer>
+    <footer class="footer" role="contentinfo">
+      <div class="footer-inner">
+        <p>&copy; 2020-2026 BaseAngularAppAuthors </p>
+        <p>Built from version {{ gitVersion }}</p>
+      </div>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

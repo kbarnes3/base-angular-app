@@ -33,8 +33,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/github-fork-ribbon-css/gh-fork-ribbon.css",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+              "node_modules/github-fork-ribbon-css/gh-fork-ribbon.css"
             ],
             "scripts": [],
             "extractLicenses": false,

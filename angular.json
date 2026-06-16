@@ -88,9 +88,8 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/build:karma",
           "options": {
-            "main": "src/test.ts",
             "polyfills": [
               "@angular/localize/init",
               "zone.js"

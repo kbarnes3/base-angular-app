@@ -15,7 +15,7 @@ mat-toolbar {
   }
 
   // Active nav link
-  .mat-mdc-button.active {
+  .mat-mdc-button.route-active {
     background: color-mix(in srgb, var(--mat-sys-on-primary) 18%, transparent);
     border-radius: 999px;
   }
@@ -35,6 +35,8 @@ mat-toolbar {
   gap: 0.5rem;
   margin-left: 0.5rem;
 }
+
+
 
 .toolbar-spacer {
   flex: 1;

